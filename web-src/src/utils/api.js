@@ -12,13 +12,23 @@ http.interceptors.response.use(
   response => {
     let data = response
     return Promise.resolve(data)
+  },
+  error=>{
+    console.error(error);
+    return Promise.reject(error)
   }
 )
 
-const get = (url,params) => http.get(url,{params})
+const get = (url,params) => http.get(url,{params});
+const post = (url,params)=>http.post(url,params);
+const del = (url,id)=>http.post(`${url}/${id}`);
+const put = (url,id,params)=>http.post(`${url}/${id}`,params);
 
 let api = {
-  get
+  get,
+  post,
+  del,
+  put
 }
 Vue.prototype.$http = api;
 

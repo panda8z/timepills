@@ -19,6 +19,14 @@ module.exports = {
           // '^/api/' : ''
         },
     },
+    '/static': {
+      target: 'http://s.timepill.net',
+      changeOrigin: true,
+      pathRewrite: {
+        '^/static/' : ''
+      },
+  },
+
     },
 
     // Various Dev Server settings
