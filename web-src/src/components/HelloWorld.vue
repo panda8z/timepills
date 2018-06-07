@@ -90,6 +90,12 @@ export default {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
+  },
+
+  created(){
+    this.$http.get('/api/40').then(res=>{
+      console.log(res)
+    })
   }
 }
 </script>
