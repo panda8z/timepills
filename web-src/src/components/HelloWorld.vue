@@ -80,6 +80,7 @@
         </a>
       </li>
     </ul>
+
   </div>
 </template>
 
@@ -93,7 +94,7 @@ export default {
   },
 
   created(){
-    this.$http.get('/api/40').then(res=>{
+    this.$http.get('/api/users/my').then(res=>{
       console.log(res)
     })
   }

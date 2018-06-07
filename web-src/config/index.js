@@ -13,10 +13,10 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/api': {
-        target: 'http://www.timepill.net',
+        target: 'https://open.timepill.net',
         changeOrigin: true,
         pathRewrite: {
-          '^/api/' : '/'
+          // '^/api/' : ''
         },
     },
     },

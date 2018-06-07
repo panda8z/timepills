@@ -1,6 +1,12 @@
 import axios from 'axios'
 import Vue from 'vue'
-const http = axios.create()
+const http = axios.create(
+  {
+    headers:{
+      'Authorization':'Basic cGFuZGE4QDEyNi5jb206amlhamlhMTIz'
+    }
+  }
+)
 
 http.interceptors.response.use(
   response => {
