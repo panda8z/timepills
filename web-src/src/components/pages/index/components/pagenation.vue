@@ -36,7 +36,7 @@ export default {
       default: 0
     },
     pageSize: {
-      default: 10
+      default: 15
     }
   },
 
