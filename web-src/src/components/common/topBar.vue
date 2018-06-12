@@ -36,6 +36,7 @@ export default {};
   box-shadow: 0 0 5px #ccc;
   overflow: visible;
   .header {
+    padding: 0;
     margin: 0 auto;
     width: 960px;
     list-style: none;
