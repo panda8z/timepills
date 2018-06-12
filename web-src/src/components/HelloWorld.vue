@@ -80,6 +80,7 @@
         </a>
       </li>
     </ul>
+
   </div>
 </template>
 
@@ -90,6 +91,12 @@ export default {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
+  },
+
+  created(){
+    this.$http.get('/api/users/my').then(res=>{
+      console.log(res)
+    })
   }
 }
 </script>
