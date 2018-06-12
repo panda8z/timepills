@@ -1,6 +1,6 @@
 <template>
-   <div class='content-container clearfix'>
-      <div class="content">
+   <div class='content-container clearfix' v-loading='loading' element-loading-text="数据加载中">
+      <div class="content ">
           <ul>
             <li>
               <h4>最新日记</h4>
@@ -23,6 +23,7 @@
               </div>
             </li>
           </ul>
+          <pagenation :total='total' @on-change='onPageChange'></pagenation>
 
       </div>
       <div class="side-bar"></div>
@@ -30,10 +31,19 @@
 </template>
 
 <script>
+import pagenation from "./pagenation";
+
 export default {
+  components: {
+    pagenation
+  },
+
   data() {
     return {
-      diaries: []
+      diaries: [],
+      total:0,
+      currentPage:1,
+      loading:false
     };
   },
 
@@ -43,10 +53,28 @@ export default {
 
   methods: {
     getDiaries() {
-      this.$http.get("api/diaries/today").then(res => {
+      this.loading = true;
+      let params = {
+        page:this.currentPage
+      }
+      this.$http.get("api/diaries/today",params).then(res => {
+        this.loading = false;
         this.diaries = res.data.diaries;
+        this.total = res.data.count;
       });
-    }
+    },
+
+    onPageChange(page){
+     this.currentPage = page;
+     this.getDiaries();
+     this.scrollToTop();
+    },
+
+    scrollToTop(){
+      let el =  document.querySelector('.content>ul')
+      console.log(el.scrollTop)
+    },
+
   }
 };
 </script>
@@ -115,7 +143,7 @@ export default {
         font-size: 13px;
         display: flex;
         div {
-            float: left;
+          float: left;
         }
         img {
           margin-right: 10px;

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class='index-page'>
     <topBar></topBar>
     <contentBody ></contentBody>
   </div>
@@ -13,6 +13,10 @@ export default {
    components:{
      topBar,
      contentBody
+   },
+
+   methods:{
+
    }
 }
 </script>
