@@ -64,10 +64,6 @@
                 <span>拒绝懒惰</span>
               </li>
 
-
-
-
-
               <li>
                 <img src="../../../../assets/images/user4.jpg" alt="">
                 <span>Yaer</span>
@@ -122,8 +118,6 @@
                 <img src="../../../../assets/images/user12.jpg" alt="">
                 <span>一二三，木头人</span>
               </li>
-
-
 
               <li>
                 <img src="../../../../assets/images/user14.jpg" alt="">

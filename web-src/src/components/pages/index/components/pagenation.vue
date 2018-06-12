@@ -61,7 +61,6 @@ export default {
           this.currentIndex + 1,
           this.currentIndex + 2
         ];
-        this.pageIndex = this.pageIndex.filter(item => item >= 1);
       } else {
         this.pageIndex = [
           this.currentIndex - 2,
@@ -69,10 +68,10 @@ export default {
           this.currentIndex,
           this.currentIndex + 1
         ];
-        this.pageIndex = this.pageIndex.filter(
-          item => item >= 1 && item <= this.totalIndex
-        );
       }
+      this.pageIndex = this.pageIndex.filter(
+        item => item >= 1 && item <= this.totalIndex
+      );
     }
   },
 
