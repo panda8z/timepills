@@ -79,7 +79,7 @@ export default {
     getPageIndex() {
       this.totalIndex = Math.floor(this.total / this.pageSize + 1);
       if (!this.currentIndex) {
-        if (this.totalIndex > 3) {
+        if (this.totalIndex >= 3) {
           this.pageIndex = [1, 2, 3];
         } else {
           for (let i = 1; i <= totalIndex; i++) {
